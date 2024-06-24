@@ -73,7 +73,7 @@ def move_dcm_files(
         try:
             destination_path = os.path.join(patient_path, os.path.basename(dcm_file))
             if not os.path.exists(destination_path):
-                shutil.copy(dcm_file, destination_path)
+                shutil.move(dcm_file, destination_path)
                 moved_files_count += 1
                 time.sleep(0.01)  # Sleep for 10 ms to avoid overloading the system
             else:
